@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand: #0ea5e9;
+  --color-accent: #f43f5e;
+  --color-ink: #FFFFFF;
+  --color-void: #000000;
+  --color-paper: #050505;
+  --color-card: #111111;
+  --color-border: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-void text-ink font-sans antialiased uppercase;
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tighter font-black;
+  }
+}
+
+@utility bold-card {
+  @apply border border-border bg-card p-8 relative transition-colors hover:border-brand/40;
+}
+
+@utility bold-input {
+  @apply w-full bg-void border border-border p-4 text-ink focus:border-brand focus:outline-none transition-all font-medium;
+}
+
+@utility accent-button {
+  @apply bg-brand text-white px-8 py-4 font-bold text-xs tracking-widest uppercase transition-all hover:brightness-110 active:scale-95 disabled:opacity-50;
+}
+
+@utility micro-label {
+  @apply text-[10px] text-[#444] font-bold tracking-[0.2em] uppercase;
+}
